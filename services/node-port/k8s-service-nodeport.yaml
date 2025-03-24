@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: k8s-replica-set
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: k8s-pod
+  template:
+    metadata:
+      labels:
+        app: k8s-pod
+    spec:
+      containers:
+        - image: 130620/k8s-pod
+          name: k8s-pod-container
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s-service-nodeport
+spec:
+  selector:
+    app: k8s-pod
+  type: NodePort
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 31000

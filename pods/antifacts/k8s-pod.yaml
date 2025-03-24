@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8s-pod
+spec:
+  containers:
+    - image: 130620/k8s-pod
+      name: k8s-pod-container
+      ports:
+        - containerPort: 3000
+          protocol: TCP

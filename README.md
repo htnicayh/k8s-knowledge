@@ -27,6 +27,3 @@ To get started with Kubernetes, you can check out the official documentation [he
 ## Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
-Beta
-0 / 0
-used queries
