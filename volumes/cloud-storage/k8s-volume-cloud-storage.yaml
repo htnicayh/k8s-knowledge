@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8s-volume-cloud-storage
+spec:
+  containers:
+    - name: mongo
+      image: mongodb
+      ports:
+        - containerPort: 27017
+          protocol: TCP
+      volumeMounts:
+        - name: k8s-volume-storage
+          mountPath: /data/db
+  volumes:
+    - name: k8s-volume-storage
+      awsElasticBlockStore:
+        volumeID: aws-persistent-disk
+        fsType: ext4

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8s-persistent-volume-example
+spec:
+  containers:
+    - image: busybox
+      name: k8s-pod-container
+      command: ['/bin/sh', '-c', "echo 'Hello Persistent Volume' > /data/message && sleep 3600"]
+      volumeMounts:
+        - mountPath: /data
+          name: k8s-volume-storage
+  volumes:
+    - name: k8s-volume-storage
+      persistentVolumeClaim:
+        claimName: k8s-persistent-volume-claim

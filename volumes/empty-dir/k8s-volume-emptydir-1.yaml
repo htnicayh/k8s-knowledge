@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8s-volume-empty-dir
+spec:
+  containers:
+    - name: k8s-volume-pod-writter
+      image: busybox
+      command: ['/bin/sh', '-c', "echo 'Hello from writter' > /data/message & sleep 3600"]
+      volumeMounts:
+        - mountPath: /data
+          name: k8s-volume-storage
+    - name: k8s-volume-pod-reader
+      image: busybox
+      command: ['/bin/sh', '-c', 'cat /data/message && sleep 3600']
+      volumeMounts:
+        - mountPath: /data
+          name: k8s-volume-storage
+  volumes:
+    - name: k8s-volume-storage
+      emptyDir: {}
