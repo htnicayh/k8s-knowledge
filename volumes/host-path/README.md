@@ -45,6 +45,4 @@ spec:
 
 ## Visualizer
 
-<div align="center">
 ![HostPath](../../images/host-path.png)
-</div>

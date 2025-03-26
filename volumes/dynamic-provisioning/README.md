@@ -33,6 +33,4 @@ parameters:
 
 ## Visualizer
 
-<div align="center">
 ![StorageClass](../../images/persistent-volumes/storage-class.png)
-</div>

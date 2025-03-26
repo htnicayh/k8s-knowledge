@@ -50,6 +50,4 @@ spec:
 
 ## Visualizer
 
-<div align="center">
 ![EmptyDir](../../images/empty-dir.png)
-</div>

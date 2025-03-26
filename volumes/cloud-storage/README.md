@@ -46,6 +46,4 @@ spec:
 
 ## Visualizer
 
-<div align="center">
 ![CloudStorage](../../images/cloud-storage.png)
-</div>
