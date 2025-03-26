@@ -1,11 +1,13 @@
-FROM node:18-alpine
+FROM oven/bun:latest
 
 WORKDIR /app
 
 COPY package.json .
 
-RUN npm install
+COPY bun.lockb .
 
 COPY index.js .
 
-ENTRYPOINT [ "node", "index" ]
+RUN bun install
+
+ENTRYPOINT [ "bun", "index" ]
